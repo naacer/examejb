@@ -23,7 +23,7 @@ public class CDServiceBeanImpl implements CdServiceBean {
     public void emprunterCD(Long cdId, Long utilisateurId) {
         Cd cd = em.find(Cd.class, cdId);
         if (cd != null && cd.isDisponible()) { // Vérifiez si le CD est disponible
-            cd.setDisponible(false);
+            cd.setDisponible( false);
             Emprunt emprunt = new Emprunt();
             emprunt.setUtilisateurId(utilisateurId);
             emprunt.setCdId(cdId);
